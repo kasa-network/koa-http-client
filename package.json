@@ -1,0 +1,65 @@
+{
+  "name": "@kasa/koa-http-client",
+  "version": "0.1.0",
+  "description": "HTTP Client to communicate with the context during inter-service communications in Koa",
+  "homepage": "https://github.com/kasa-network/koa-http-client",
+  "author": {
+    "name": "Kasa Engineering",
+    "email": "dev@kasa.network",
+    "url": "http://www.kasa.network"
+  },
+  "contributors": [
+    {
+      "name": "Byungjin Park",
+      "email": "posquit0.bj@gmail.com",
+      "url": "http://www.posquit0.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasa-network/koa-http-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kasa-network/koa-http-client/issues"
+  },
+  "keywords": [
+    "kasa",
+    "koa",
+    "koa2",
+    "koa-middleware",
+    "koa2-middleware",
+    "http-client",
+    "http"
+  ],
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version",
+    "test": "NODE_ENV=test jest --passWithNoTests",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "lint": "eslint lib test",
+    "lint:lib": "eslint lib",
+    "lint:test": "eslint test"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "got": "^9.6.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "eslint": "^5.14.1",
+    "eslint-config-kasa": "^0.2.0",
+    "jest": "^24.1.0",
+    "jest-extended": "^0.11.1",
+    "jest-junit": "^6.3.0",
+    "standard-version": "^5.0.0"
+  }
+}
