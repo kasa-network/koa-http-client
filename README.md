@@ -13,8 +13,8 @@
   <a href="https://coveralls.io/github/kasa-network/koa-http-client">
     <img src="https://coveralls.io/repos/github/kasa-network/koa-http-client/badge.svg" alt='Coverage Status' />
   </a>
-  <a href="https://badge.fury.io/js/@kasa/koa-http-client">
-    <img alt="npm version" src="https://www.npmjs.com/package/@kasa/koa-http-client" />
+  <a href="https://www.npmjs.com/package/@kasa/koa-http-client">
+    <img alt="npm version" src="https://img.shields.io/npm/v/@kasa/koa-http-client.svg" />
   </a>
   <a href="https://david-dm.org/kasa-network/koa-http-client">
     <img alt="npm" src="https://img.shields.io/david/kasa-network/koa-http-client.svg?style=flat-square" />
