@@ -1,6 +1,6 @@
 {
   "name": "@kasa/koa-http-client",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "HTTP Client to communicate with the context during inter-service communications in Koa",
   "homepage": "https://github.com/kasa-network/koa-http-client",
   "author": {
