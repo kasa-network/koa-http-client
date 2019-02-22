@@ -14,7 +14,7 @@
     <img src="https://coveralls.io/repos/github/kasa-network/koa-http-client/badge.svg" alt='Coverage Status' />
   </a>
   <a href="https://badge.fury.io/js/@kasa/koa-http-client">
-    <img alt="npm version" src="https://img.shields.io/npm/v/@kasa/koa-http-client.svg" />
+    <img alt="npm version" src="https://www.npmjs.com/package/@kasa/koa-http-client" />
   </a>
   <a href="https://david-dm.org/kasa-network/koa-http-client">
     <img alt="npm" src="https://img.shields.io/david/kasa-network/koa-http-client.svg?style=flat-square" />
@@ -29,6 +29,7 @@
 
 <br />
 
+Communication between microservices must be efficient. With lots of microservices to complete a single request(transaction) successfully, each communication should have a context informations like the request id, content language, or something else. **Koa HTTP Client** will help inter-service communication with automatically attached context informations.
 
 ## Installation
 
@@ -57,9 +58,22 @@ const httpClient = require('@kasa/koa-http-client');
 const app = new Koa();
 
 app.use(requestId());
-app.use(httpClient({}));
+app.use(httpClient({
+  retry: 3
+}));
 app.use(async ctx => {
-  ctx.body = ctx.state.reqId;
+  const userService = ctx.http.extend({
+    baseUrl: 'http://user.company.com:8080/'
+  });
+
+  let user;
+  try {
+    const { body } = await userService.get('/users/john');
+    user = body.user;
+  } catch (err) {
+    // Do something with error (HTTP status code 4xx or 5xx)
+  }
+  // Do something with user data
 });
 
 app.listen(3000);
@@ -104,6 +118,11 @@ These are the available config options for the middleware. All is optional. The 
   retry: 3,
 }
 ```
+
+
+## Credits
+
+* [sindresorhus/got](https://github.com/sindresorhus/got): `koa-http-client` was developed based on `got`. `koa-http-client` utilizes `got.extend` feature well!
 
 
 ## Contributing
